@@ -43,14 +43,6 @@ public class Dog
 
     public string AsString => $"{Name}, {Age}-year(s) old, breed - {Enum.GetName(Breed)}. {Desc}";
 
-    public DogBreed DogBreed
-    {
-        get => default;
-        set
-        {
-        }
-    }
-
     public Dog(string name, uint age, DogBreed breed, string? description)
     {
         Name = name;
@@ -125,7 +117,7 @@ public class Dog
     }
     public static bool Parse(string s, out Dog res) 
         => (res = Parse(s) ?? new("", 0, 0, "")) is not null;
-    public string Parse() => this.ToString();
+    public string Parse() => ToString();
     public override string ToString() => $"{Name},{Age},{Breed},{Desc}";
 
 }
